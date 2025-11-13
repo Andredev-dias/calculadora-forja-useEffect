@@ -7,6 +7,9 @@ function App() {
   const [n2, setN2] = useState()
   const [respSoma, setRespSoma] = useState()
   const [respSub, setRespSub] = useState()
+  const [respMult, setRespMult] = useState()
+  const [respDiv, setRespDiv] = useState()
+
 
   const [error, setError] = useState('')
 
@@ -16,6 +19,9 @@ function App() {
       if(n1 !== undefined && n2 !== undefined && !isNaN(n1) && !isNaN(n2)){
         setRespSoma(parseFloat(n1) + parseFloat(n2))
         setRespSub(parseFloat(n1) - parseFloat(n2))
+        setRespMult(parseFloat(n1) * parseFloat(n2))
+        setRespDiv(parseFloat(n1) / parseFloat(n2))
+
         
         setError('')
       }else{
@@ -40,6 +46,17 @@ function App() {
       <div className={styles.wrapResps}>
         <h2>Resultado da Subtração</h2>
         <h3>{respSub}</h3>
+      </div>
+      
+      <div className={styles.wrapResps}>
+        <h2>Resultado da Multiplicação</h2>
+        <h3>{respMult}</h3>
+      </div>
+
+      
+      <div className={styles.wrapResps}>
+        <h2>Resultado da Divisão</h2>
+        <h3>{respDiv}</h3>
       </div>
     </>
   )
